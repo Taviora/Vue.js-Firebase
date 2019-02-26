@@ -9,29 +9,20 @@
 <body>
     <main>
 
-        <!--Matriz-->
-
-        <!--   
         <ul>
-           <li v-for="day in working">{{ day }}</li>
-        </ul>
-        -->
-
-        <!--Matriz de objetos (collection)-->
- 
-        <!--
-        <ul>
-           <li v-for="(task, index) in tasks">{{index}}-{{task.name}} <small>{{task.priority}}</small></li>
-        </ul>
-        -->
-
-        <!--Objetos -->
-
-        <ul>
-           <li v-for="(value,key, index) in person">{{index}}-{{ key }}:{{ value }}</li>
+            <li v-for="task in tasks">
+                {{task}}
+            </li>
         </ul>
 
+        <form v-on:submit.prevent="addTask()">
+
+            <input type="text" placeholder="Introduce a new task" v-model="newTask">
+
+            <input type="submit" value="Send task" >
         
+
+        </form>     
 
        <pre>{{ $data }}</pre>
 
